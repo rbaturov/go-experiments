@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devlocator-deployment
+spec:
+  selector:
+    matchLabels:
+      name: devlocator
+  template:
+    metadata:
+      labels:
+        name: devlocator
+    spec:
+      containers:
+        - name: devlocator
+          image: quay.io/titzhak/devlocator:latest
+          imagePullPolicy: Always
+          command:
+            - "/usr/local/bin/devlocator"
+          resources:
+            limits:
+              example.com/deviceA: "1"

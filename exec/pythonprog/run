@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+import sys
+
+print("test test test")
+for arg in sys.argv:
+    print("we got ", arg)

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devlocator
+spec:
+  containers:
+    - name: devlocator
+      image: quay.io/titzhak/devlocator:latest
+      imagePullPolicy: Always
+      command:
+        - "/usr/local/bin/devlocator"
+      resources:
+        limits:
+          example.com/deviceA: "1"
