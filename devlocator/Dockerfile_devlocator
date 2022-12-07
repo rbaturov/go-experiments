@@ -1,0 +1,3 @@
+FROM busybox
+ADD bin/devlocator /bin/devlocator
+ENTRYPOINT ["/bin/devlocator"]

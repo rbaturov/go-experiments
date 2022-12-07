@@ -1,7 +1,0 @@
-FROM golang:1.19
-
-WORKDIR /go/code/go-experiments/devlocator
-COPY go.* ./
-COPY ./devlocator .
-RUN go build  -o /usr/local/bin/devlocator .
-CMD ["/usr/local/bin/devlocator"]

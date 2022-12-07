@@ -27,9 +27,11 @@ func main() {
 	}
 
 	// TODO make it configurable
-	fi, err := os.Stat("/sample-device/test-file")
+	fi, err := os.Stat("/host-var/run/test-file")
 	if err != nil {
 		log.Fatalf("%v", err)
 	}
 	log.Printf("file found: %v", fi.Name())
+	for {
+	}
 }

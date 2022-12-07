@@ -13,10 +13,17 @@ spec:
     spec:
       containers:
         - name: devlocator
-          image: quay.io/titzhak/devlocator:latest
+          image: quay.io/swsehgal/devlocator:dev-rec
           imagePullPolicy: Always
           command:
-            - "/usr/local/bin/devlocator"
+            - "/bin/devlocator"
           resources:
             limits:
               example.com/deviceA: "1"
+          volumeMounts:
+          - name: host-var-run
+            mountPath: /host-var/run
+      volumes:
+      - name: host-var-run
+        hostPath:
+          path:  /var/run
